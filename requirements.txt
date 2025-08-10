@@ -1,0 +1,10 @@
+streamlit==1.37.1
+pandas==2.1.4
+numpy==1.26.4
+scikit-learn==1.3.2
+joblib==1.3.2
+requests==2.32.3
+pyformlang==1.0.7
+
+# ANN (optional; works on most Windows/CPU setups)
+tensorflow>=2.11,<2.21

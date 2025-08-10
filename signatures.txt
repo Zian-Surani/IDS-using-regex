@@ -1,0 +1,15 @@
+# SQLi
+(?i)select.+from
+(?i)union\s+select
+(?i)or\s+1=1
+(?i)drop\s+table
+# XSS
+<script>.*?</script>
+(?i)%3Cscript%3E.*%3C/script%3E
+# Commands
+(?i)cmd\.exe
+(?i)rm\s+-rf
+(?i)wget\s+http
+(?i)curl\s+http
+# Traversal
+\.\./etc/passwd
