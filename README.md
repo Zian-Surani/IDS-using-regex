@@ -96,7 +96,7 @@ IDS-using-regex/
 You can test performance differences between Regex and DFA with:
 
 
-python scripts/bench_regex_vs_dfa.py
+```python scripts/bench_regex_vs_dfa.py```
 
 ## 📜 License
 MIT License
@@ -133,6 +133,7 @@ logs/
 # OS files
 .DS_Store
 Thumbs.db
+
 
 
 
