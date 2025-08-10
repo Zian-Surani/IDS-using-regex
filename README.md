@@ -29,3 +29,104 @@ python ann_model.py
 
 # Run Streamlit app
 streamlit run ui_app.py
+
+```
+🖥 Usage
+Open the Streamlit UI.
+
+Paste a payload (HTTP request, form data, etc.) into the input box.
+
+Choose Regex, DFA, or Both detection mode.
+
+View results:
+
+✅ Safe — No suspicious patterns detected.
+
+⚠️ Match — Potentially suspicious activity detected.
+
+🚨 Both Match — High confidence threat.
+
+Optionally upload a CSV in NSL-KDD format for ANN-based classification.
+
+📊 ANN Model
+The ANN is trained using the NSL-KDD dataset, performing binary classification:
+
+0 → Normal traffic
+
+1 → Attack
+
+Preprocessing includes:
+
+One-hot encoding for categorical features
+
+Standard scaling for numeric features
+
+📁 Project Structure
+
+IDS-using-regex/
+│
+
+├── ui_app.py                  # Streamlit UI
+
+├── regex_dfa_matcher.py       # Regex/DFA matching logic
+
+├── ann_model.py               # ANN training
+
+├── ann_classifier.py          # ANN prediction
+
+├── packet_sniffer.py          # Packet capture
+
+├── payload_extractor.py       # Extract payload from packets
+
+├── signatures.txt             # Detection patterns
+
+├── requirements.txt           # Dependencies
+
+├── model/                     # Trained ANN model
+
+├── preprocessors/             # Saved preprocessing objects
+
+└── scripts/
+    └── bench_regex_vs_dfa.py   # Benchmark script
+📈 Benchmark
+You can test performance differences between Regex and DFA with:
+
+bash
+Copy
+python scripts/bench_regex_vs_dfa.py
+
+## 📜 License
+MIT License
+
+---
+
+### **📄 .gitignore**
+```gitignore
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env/
+
+# Models & preprocessors
+model/
+preprocessors/
+
+# Logs
+logs/
+*.log
+
+# Streamlit cache
+.streamlit/
+
+# Data files
+*.csv
+*.txt
+
+# OS files
+.DS_Store
+Thumbs.db
