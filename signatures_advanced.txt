@@ -1,0 +1,34 @@
+# --- SQL Injection ---
+(?i)(?:union\s+select|select.+from|or\s+1=1|sleep\(\d+\)|information_schema|load_file\()
+(?i)(?:'\s*or\s*'1'='1|"\s*or\s*"1"="1)
+(?i)drop\s+table
+
+# --- XSS ---
+(?i)<script\b[^>]*>.*?</script>
+(?i)%3Cscript%3E.*%3C/script%3E
+(?i)<img[^>]+onerror\s*=\s*.*?>
+(?i)javascript:\w+
+
+# --- Path Traversal / LFI ---
+\.\./\.\./
+\.\./etc/passwd
+(?i)(?:/proc/self/environ|/etc/shadow|/var/log/)
+
+# --- RFI (Remote File Include) / SSRF hints ---
+(?i)(?:http|https|ftp)://[^\s]+
+(?i)@localhost|@127\.0\.0\.1|@169\.254\.\d+\.\d+
+
+# --- Command Execution ---
+(?i)cmd\.exe
+(?i)powershell\s+-[eencod]{2,}
+(?i)bash\s+-c\s+
+(?i)curl\s+http
+(?i)wget\s+http
+(?i)rm\s+-rf
+
+# --- Deserialization / Java ---
+(?i)jndi:(?:ldap|rmi|dns)://[^\s]+
+(?i)log4j|log4shell|%24\{jndi:.*\}
+
+# --- Generic malware keywords ---
+(?i)(?:malware|ransomware|trojan)
