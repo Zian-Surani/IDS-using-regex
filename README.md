@@ -3,6 +3,8 @@
 An **Intrusion Detection System (IDS)** that scans packet payloads for suspicious patterns using **Regular Expressions** and **Deterministic Finite Automata (DFA)** conversion.  
 This hybrid approach helps detect worms, exploits, and malicious payloads that may bypass simple regex checks.
 
+<img width="1919" height="956" alt="image" src="https://github.com/user-attachments/assets/10835213-aa64-4b9c-bf76-f37f760ad52f" />
+
 ---
 
 ## 🚀 Features
@@ -131,5 +133,6 @@ logs/
 # OS files
 .DS_Store
 Thumbs.db
+
 
 
